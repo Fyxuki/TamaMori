@@ -12,7 +12,10 @@
 
   :root { --color-dark: #111; --color-light: #fff; --radius: 8px; }
 
-  body { margin: 0; font-family: "Myriad Pro", Arial, sans-serif; background: var(--color-light); color: var(--color-dark); font-size: 15px; }
+  /* Global reset */
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; max-width: 100%; overflow-x: hidden; font-family: "Myriad Pro", Arial, sans-serif; background: var(--color-light); color: var(--color-dark); font-size: 15px; }
+
   h1,h2,h3,h4,h5,h6 { font-family: "Hape", Arial, sans-serif; margin: 0; }
 
   /* HEADER */
@@ -62,21 +65,21 @@
   @media (max-width: 600px) {
     .header-container { flex-direction: column; gap: 10px; }
     nav { flex-wrap: wrap; gap: 12px; justify-content: center; }
-    nav a[href^="tel:"] { display: none; } /* hide phone on mobile */
+    nav a[href^="tel:"] { display: none; }
 
     .products-intro { padding: 100px 20px 60px; text-align: center; height: auto; }
     .products-intro h1 { font-size: 28px; padding-top: 30px; }
     .products-intro p { font-size: 14px; max-width: 100%; }
 
+    .scroll-wrapper { padding: 20px; }
     .product-card { flex: 0 0 80%; max-width: 80%; }
     .products-container { overflow-x: auto !important; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; }
-    .scroll-btn { display: none !important; } /* hide arrows */
+    .scroll-btn { display: none !important; }
   }
 
   /* Header hide on scroll (mobile) */
   header.hide { transform: translateY(-100%); }
 
-  /* Prevent collision under header */
   @media (max-width: 768px) {
     main, section:first-of-type { padding-top: var(--header-height, 70px); }
   }
