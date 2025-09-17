@@ -454,10 +454,17 @@
       .footer { padding: 60px 20px; }
     }
 
-      header.hide {
-      transform: translateY(-100%);
-      transition: transform 0.3s ease-in-out;
+   header.hide {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Prevent collision under header on phone mode */
+  @media (max-width: 768px) {
+    main, section:first-of-type {
+      padding-top: var(--header-height, 70px);
     }
+  }
   </style>
 </body>
 </html>
@@ -657,6 +664,16 @@
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
     
+      function updateHeaderSpacing() {
+    const header = document.querySelector("header");
+    const headerHeight = header.offsetHeight;
+    document.documentElement.style.setProperty("--header-height", headerHeight + "px");
+  }
+
+  // Run on load + resize
+  window.addEventListener("load", updateHeaderSpacing);
+  window.addEventListener("resize", updateHeaderSpacing);
+
   </script>
 </body>
 </html>
