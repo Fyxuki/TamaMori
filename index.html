@@ -466,6 +466,24 @@
       padding-top: var(--header-height, 70px);
     }
   }
+
+  @media (max-width: 600px) {
+  /* Center the buttons */
+  .hero .buttons {
+    justify-content: center;
+  }
+
+  /* Remove phone number on mobile */
+  nav a[href^="tel:"] {
+    display: none;
+  }
+
+  /* Extra top padding for heading */
+  .hero h1 {
+    padding-top: 30px;
+  }
+}
+
   </style>
 </body>
 </html>
