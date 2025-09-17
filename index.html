@@ -453,6 +453,11 @@
       .split .text { padding: 30px 20px; }
       .footer { padding: 60px 20px; }
     }
+
+      header.hide {
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
   </style>
 </body>
 </html>
@@ -633,6 +638,25 @@
         }, 300);
       }
     });
+        let lastScrollTop = 0;
+    const header = document.querySelector("header");
+
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (window.innerWidth <= 768) {
+        if (scrollTop > lastScrollTop) {
+          header.classList.add("hide");
+        } else {
+          header.classList.remove("hide");
+        }
+      } else {
+        header.classList.remove("hide");
+      }
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+    
   </script>
 </body>
 </html>
