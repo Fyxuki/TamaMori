@@ -439,34 +439,21 @@
     }
 
     @media (max-width: 600px) {
-  .header-container {
-    flex-direction: column;
-    gap: 10px;
-    padding: 42px 30px; /* extra padding for phone */
-  }
-
-  header img {
-    height: 66px; /* bigger logo on phone */
-  }
-
-  .hero { 
-    padding: 100px 20px 60px; 
-    text-align: center; 
-  }
-
-  .hero .buttons {
-    justify-content: center; /* center buttons */
-  }
-
-  .hero h1 { font-size: 28px; }
-  .hero h2 { font-size: 16px; }
-  .hero p { font-size: 14px; max-width: 100%; }
-  .service-card { flex: 0 0 80%; max-width: 80%; }
-  .history { flex-direction: column; padding: 60px 20px; }
-  .split .text { padding: 30px 20px; }
-  .footer { padding: 60px 20px; }
-}
-
+      .header-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+      nav { flex-wrap: wrap; gap: 12px; justify-content: center; }
+      .hero { padding: 100px 20px 60px; text-align: center; }
+      .hero h1 { font-size: 28px; }
+      .hero h2 { font-size: 16px; }
+      .hero p { font-size: 14px; max-width: 100%; }
+      .service-card { flex: 0 0 80%; max-width: 80%; }
+      .history { flex-direction: column; padding: 60px 20px; }
+      .split .text { padding: 30px 20px; }
+      .footer { padding: 60px 20px; }
+      
+    }
 
    header.hide {
     transform: translateY(-100%);
